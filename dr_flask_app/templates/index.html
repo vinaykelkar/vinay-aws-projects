@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1 class="text-primary">One Stop DR Solution!</h1>
+  
+
+  <form action="/submit" method="POST">
+
+    <div class="row mb-3 align-items-start">
+        <label for="drIntroduction" class="col-sm-2 col-form-label">DR Introduction</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="drIntroduction" name="drIntroduction" rows="4" required placeholder="Enter DR Introduction..."></textarea>
+        </div>
+      </div>
+
+      <div class="row mb-3 align-items-start">
+        <label for="drScope" class="col-sm-2 col-form-label">DR Scope</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="drScope" name="drScope" rows="4" required placeholder="Enter DR Scope..."></textarea>
+        </div>
+      </div>
+
+      <div class="row mb-3 align-items-start">
+        <label for="drInfraTopology" class="col-sm-2 col-form-label">DR Infra Topology</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="drInfraTopology" name="drInfraTopology" rows="4" required placeholder="Enter DR Infra Topology..."></textarea>
+        </div>
+      </div>
+
+      <div class="row mb-3 align-items-start">
+        <label for="drTechStack" class="col-sm-2 col-form-label">DR Tech Stack</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="drTechStack" name="drTechStack" rows="4" required placeholder="Enter DR App tech Stack..."></textarea>
+        </div>
+      </div>
+
+      <!-- Word Document Upload (.doc only) -->
+<div class="row mb-3">
+    <label for="drEvidence" class="col-sm-2 col-form-label">Upload DR Evidence (.doc)</label>
+    <div class="col-sm-10">
+      <input type="file" class="form-control" id="drEvidence" name="drEvidence" accept=".doc" required>
+    </div>
+  </div>
+  
+  <!-- DR Drill Template Upload (.xlsx only) -->
+  <div class="row mb-3">
+    <label for="drTemplate" class="col-sm-2 col-form-label">Upload DR Drill Template (.xlsx)</label>
+    <div class="col-sm-10">
+      <input type="file" class="form-control" id="drTemplate" name="drTemplate" accept=".xlsx" required>
+    </div>
+  </div>
+  
+
+<!-- DR Objectives Button -->
+<div class="mb-3">
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#drObjectivesForm" aria-expanded="false" aria-controls="drObjectivesForm">
+      Add DR Objectives
+    </button>
+  </div>
+  
+  <!-- Collapsible Form Section -->
+  <div class="collapse" id="drObjectivesForm">
+    <div class="card card-body">
+      
+      <div class="row mb-3">
+        <label for="rpo" class="col-sm-2 col-form-label">RPO</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="drrpo" name="drrpo" required placeholder="Enter Recovery Point Objective In Minutes">
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="rto" class="col-sm-2 col-form-label">RTO</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="drrto" name="drrto" required placeholder="Enter Recovery Time Objective in Minutes">
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="drDrillType" class="col-sm-2 col-form-label">DR Drill Type</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="drDrillType" name="drDrillType" required placeholder="e.g. Internal / External">
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="frequency" class="col-sm-2 col-form-label">Frequency</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="drfrequency" name="drfrequency" required placeholder="e.g. Quarterly / Bi-annually">
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="complianceImpact" class="col-sm-2 col-form-label">Compliance Impact</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="drcomplianceImpact" name="drcomplianceImpact" required placeholder="e.g. Regulatory Mandate / Internal Audit">
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+    <!-- Submit Button -->
+    <div class="text-end mt-4">
+        <button type="submit" class="btn btn-primary">Submit All</button>
+    </div>
+    
+    </form>
+
+{% endblock %}
